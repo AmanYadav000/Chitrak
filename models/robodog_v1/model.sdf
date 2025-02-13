@@ -1,0 +1,63 @@
+<?xml version='1.0'?>
+<sdf version="1.9">
+  <model name="drone_v1">
+    <link name='base_link'>
+      <velocity_decay>
+        <linear>0.0</linear>
+        <angular>0.0</angular>
+      </velocity_decay>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>1.5</mass>
+        <inertia>
+          <ixx>0.008</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.015</iyy>
+          <iyz>0</iyz>
+          <izz>0.017</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_collision'>
+        <pose>0 0 -0.08 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.47 0.47 0.23</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>100.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>100000.0</mu>
+              <mu2>100000.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='base_visual'>
+        <geometry>
+          <mesh>
+            <uri>/root/robodog_ws/install/robodog/share/robodog/models/iris_with_standoffs/meshes/assme.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.05 0.05 0.05</ambient>
+          <diffuse>0.05 0.05 0.05</diffuse>
+          <specular>1 1 1 1</specular>
+          <pbr>
+            <metal>
+              <metalness>0.5</metalness>
+              <roughness>0.5</roughness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>   
+    </link> 
+  </model>
+</sdf>
